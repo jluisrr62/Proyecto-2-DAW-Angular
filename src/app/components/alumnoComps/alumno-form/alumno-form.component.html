@@ -1,0 +1,46 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #alumnoForm="ngForm">
+        <div class="form-group">
+          <label for="name">dni</label>
+          <input type="text" [(ngModel)]="alumno.dni"
+            class="form-control" 
+            id="nombre" 
+            name="nombre" 
+            placeholder="inserta tu dni"
+            required #name="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="email">Nombre</label>
+          <input type="text" [(ngModel)]="alumno.nombre"
+            class="form-control" 
+            id="email" 
+            name="email" 
+            placeholder="Enter your email address"
+            required #email="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="email">Nombre de usuario</label>
+          <input type="text" [(ngModel)]="alumno.nUsuario"
+            class="form-control" 
+            id="email" 
+            name="email" 
+            placeholder="Enter your email address"
+            required #email="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="email">Contraseña</label>
+          <input type="text" [(ngModel)]="alumno.contrasenia"
+            class="form-control" 
+            id="email" 
+            name="email" 
+            placeholder="Enter your email address"
+            required #email="ngModel">
+        </div>
+        
+        <button type="submit" [disabled]="!alumnoForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>
+

@@ -1,0 +1,20 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">dni</th>
+            <th scope="col">nombre</th>
+            <th scope="col">usuario y contraseña</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let alumno of alumnos">
+            <td>{{ alumno.dni }}</td>
+            <td>{{ alumno.nombre }}</td>
+            <td> nombre usuario: {{ alumno.nUsuario }} || password: {{ alumno.contrasenia }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
