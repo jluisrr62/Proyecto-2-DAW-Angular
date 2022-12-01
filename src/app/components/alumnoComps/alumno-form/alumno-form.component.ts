@@ -17,15 +17,15 @@ export class AlumnoFormComponent {
   };
   constructor(
     private route: ActivatedRoute, 
-      private router: Router, 
-        private alummoService: AlumnoService) {
-    this.alumno = new Alumno();
-  }
-  onSubmit() {
-    this.alummoService.save(this.alumno).subscribe(result => this.gotoAlumnoList());
-  }
+    private router: Router, 
+    private alummoService: AlumnoService) {
+      this.alumno = new Alumno();
+    }
+    onSubmit() {
+      this.alummoService.save(this.alumno).subscribe(result => this.gotoAlumnoList());
+    }
 
-  gotoAlumnoList(){
-    this.router.navigate(['/alumnos']);
-  }
+    gotoAlumnoList(){
+      this.router.navigate(['/alumnos']);
+    }
 }

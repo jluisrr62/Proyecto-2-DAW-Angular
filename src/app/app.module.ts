@@ -8,6 +8,8 @@ import { AlumnoFormComponent } from './components/alumnoComps/alumno-form/alumno
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminsListComponent } from './components/adminComps/admins-list/admins-list.component';
+import { AdminFormComponent } from './components/adminComps/admin-form/admin-form.component';
 
 
 
@@ -15,7 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     AlumnosListComponent,
-    AlumnoFormComponent
+    AlumnoFormComponent,
+    AdminsListComponent,
+    AdminFormComponent
   ],
   imports: [
     BrowserModule,

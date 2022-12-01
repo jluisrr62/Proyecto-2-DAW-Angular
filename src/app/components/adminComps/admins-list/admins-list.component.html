@@ -5,23 +5,26 @@
           <tr>
             <th scope="col">dni</th>
             <th scope="col">nombre</th>
+            <th scope="col">nº de colegiado</th>
             <th scope="col">usuario</th>
             <th scope="col">contraseña</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let alumno of alumnos">
-            <td>{{ alumno.dni }}</td>
-            <td>{{ alumno.nombre }}</td>
-            <td>{{ alumno.nUsuario }}</td>
-            <td>{{ alumno.contrasenia }}</td>
+          <tr *ngFor="let admin of admins">
+            <td>{{ admin.dni }}</td>
+            <td>{{ admin.nombre }}</td>
+            <td>{{ admin.n_colegiado }}</td>
+            <td>{{ admin.nUsuario }}</td>
+            <td>{{ admin.contrasenia }}</td>
           </tr>
           <tr>
             <td>
-              <a routerLink="/addalumno" class="btn btn-info">Add alumno</a>
+                <a routerLink="/addadmin" class="btn btn-info">Add Admin</a>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+
