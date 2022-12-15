@@ -17,6 +17,9 @@
             <td>{{ alumno.nombre }}</td>
             <td>{{ alumno.nUsuario }}</td>
             <td>{{ alumno.contrasenia }}</td>
+            <td>
+              <button class="btn btn-info" (click)='AlumnoDelete(alumno.id)'>Borrar</button>
+            </td>
           </tr>
           <tr>
             <td>

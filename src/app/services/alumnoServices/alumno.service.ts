@@ -22,7 +22,7 @@ export class AlumnoService {
     return this.http.post<Alumno>(this.alumnosUrl, alumno);
   }
 
-  public delete(alumno: Alumno) {
-    return this.http.delete<Alumno>(this.alumnosUrl+"/"+alumno.dni)
+  public delete(alumnoId: number) {
+    return this.http.delete<number>(this.alumnosUrl+"/"+alumnoId)
   }
 }
