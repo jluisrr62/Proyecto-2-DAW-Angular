@@ -3,6 +3,7 @@
       <table class="table table-bordered table-striped">
         <thead class="thead-dark">
           <tr>
+            <th scope="col">id</th>
             <th scope="col">dni</th>
             <th scope="col">nombre</th>
             <th scope="col">nº de colegiado</th>
@@ -12,6 +13,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let admin of admins">
+            <td>{{ admin.id }}</td>
             <td>{{ admin.dni }}</td>
             <td>{{ admin.nombre }}</td>
             <td>{{ admin.n_colegiado }}</td>

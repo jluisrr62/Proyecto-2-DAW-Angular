@@ -9,12 +9,8 @@ import { AlumnoService } from 'src/app/services/alumnoServices/alumno.service';
   styleUrls: ['./alumno-form.component.css']
 })
 export class AlumnoFormComponent {
-  alumno: Alumno={
-    dni:"",
-    nombre:"",
-    nUsuario:"",
-    contrasenia:""
-  };
+  alumno: Alumno;
+  
   constructor(
     private route: ActivatedRoute, 
     private router: Router, 

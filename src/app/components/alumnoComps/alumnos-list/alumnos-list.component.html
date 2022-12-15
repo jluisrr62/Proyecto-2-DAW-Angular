@@ -3,6 +3,7 @@
       <table class="table table-bordered table-striped">
         <thead class="thead-dark">
           <tr>
+            <th scope="col">id</th>
             <th scope="col">dni</th>
             <th scope="col">nombre</th>
             <th scope="col">usuario</th>
@@ -11,6 +12,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let alumno of alumnos">
+            <td>{{ alumno.id }}</td>
             <td>{{ alumno.dni }}</td>
             <td>{{ alumno.nombre }}</td>
             <td>{{ alumno.nUsuario }}</td>

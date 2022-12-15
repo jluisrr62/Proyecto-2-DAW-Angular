@@ -21,4 +21,8 @@ export class AlumnoService {
   public save(alumno: Alumno) {
     return this.http.post<Alumno>(this.alumnosUrl, alumno);
   }
+
+  public delete(alumno: Alumno) {
+    return this.http.delete<Alumno>(this.alumnosUrl+"/"+alumno.dni)
+  }
 }

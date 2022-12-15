@@ -10,13 +10,8 @@ import { AdminService } from 'src/app/services/adminServices/admin.service';
   styleUrls: ['./admin-form.component.css']
 })
 export class AdminFormComponent {
-  admin: Admin={
-    dni:"",
-    nombre:"",
-    nUsuario:"",
-    contrasenia:"",
-    n_colegiado:""
-  };
+  admin: Admin;
+  
   constructor(
     private route: ActivatedRoute, 
     private router: Router, 
