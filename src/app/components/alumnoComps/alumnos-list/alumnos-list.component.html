@@ -8,6 +8,7 @@
             <th scope="col">nombre</th>
             <th scope="col">usuario</th>
             <th scope="col">contraseña</th>
+            <th scope="col">borrar y editar</th>
           </tr>
         </thead>
         <tbody>
@@ -18,7 +19,10 @@
             <td>{{ alumno.nUsuario }}</td>
             <td>{{ alumno.contrasenia }}</td>
             <td>
-              <button class="btn btn-info" (click)='AlumnoDelete(alumno.id)'>Borrar</button>
+              <button class="btn btn-danger" (click)='AlumnoDelete(alumno.id)'>Borrar</button>
+              <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#exampleModal">
+                Editar
+              </button>
             </td>
           </tr>
           <tr>
@@ -30,3 +34,44 @@
       </table>
     </div>
   </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edita el alumno</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <!--form-->
+          <div class="form-group">
+            <label for="dni">DNI</label>
+            <input type="text" class="form-control" id="dni" placeholder="inserta el dni nuevo">
+          </div>
+          <div class="form-group">
+            <label for="dni">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="inserta el nombre nuevo">
+          </div>
+          <div class="form-group">
+            <label for="dni">Usuario</label>
+            <input type="text" class="form-control" id="nUsuario" placeholder="inserta el nombre de usuario nuevo">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input type="password" class="form-control" id="contraseña" placeholder="inserta la nueva contraseña">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
