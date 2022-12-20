@@ -25,4 +25,9 @@ export class AlumnoService {
   public delete(alumnoId: number) {
     return this.http.delete<number>(this.alumnosUrl+"/"+alumnoId)
   }
+
+  public update(alumno:Alumno, alumnoId: Number) {
+    console.log('se manda la peticion put al alumno' + alumnoId + ' de nombre ' + alumno.nombre)
+    return this.http.put(this.alumnosUrl+"/"+alumnoId, alumno)
+  }
 }
