@@ -24,70 +24,70 @@
                 Editar
               </button>
               <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edita el alumno</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form (ngSubmit)="onSubmit(alumno.id)" #alumnoForm="ngForm">
-          <!--form-->
-          <div class="form-group">
-            <label for="dni">DNI</label>
-            <input 
-            type="text" 
-            class="form-control" 
-            name="dni"
-            id="dni" placeholder="inserta el dni nuevo"  
-            [(ngModel)]="alumnoEdit.dni" 
-            required #dni="ngModel">
-          </div>
-          <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input 
-            type="text" 
-            class="form-control" 
-            id="nombre" 
-            name="nombre"
-            placeholder="inserta el nombre nuevo" 
-            [(ngModel)]="alumnoEdit.nombre" 
-            required #nombre="ngModel">
-          </div>
-          <div class="form-group">
-            <label for="nUsuario">Usuario</label>
-            <input 
-            type="text" 
-            class="form-control" 
-            id="nUsuario" 
-            name="nUsuario"
-            placeholder="inserta el nombre de usuario nuevo" 
-            [(ngModel)]="alumnoEdit.nUsuario" 
-            required #nUsuario="ngModel">
-          </div>
-          <div class="form-group">
-            <label for="contrasenia">Contraseña</label>
-            <input
-            type="password" 
-            class="form-control" 
-            id="contraseña" 
-            name="contrasenia"
-            placeholder="inserta la nueva contraseña" 
-            [(ngModel)]="alumnoEdit.contrasenia" 
-            required #contrasenia="ngModel">
-          </div>
-          <button type="submit" class="btn btn-primary" [disabled]="!alumnoForm.form.valid">Submit</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="(location.reload())">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Edita el alumno</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form (ngSubmit)="onSubmit(alumno.id)" #alumnoForm="ngForm">
+                        <!--form-->
+                        <div class="form-group">
+                          <label for="dni">DNI</label>
+                          <input 
+                          type="text" 
+                          class="form-control" 
+                          name="dni"
+                          id="dni" placeholder="inserta el dni nuevo"  
+                          [(ngModel)]="alumnoEdit.dni" 
+                          required #dni="ngModel">
+                        </div>
+                        <div class="form-group">
+                          <label for="nombre">Nombre</label>
+                          <input 
+                          type="text" 
+                          class="form-control" 
+                          id="nombre" 
+                          name="nombre"
+                          placeholder="inserta el nombre nuevo" 
+                          [(ngModel)]="alumnoEdit.nombre" 
+                          required #nombre="ngModel">
+                        </div>
+                        <div class="form-group">
+                          <label for="nUsuario">Usuario</label>
+                          <input 
+                          type="text" 
+                          class="form-control" 
+                          id="nUsuario" 
+                          name="nUsuario"
+                          placeholder="inserta el nombre de usuario nuevo" 
+                          [(ngModel)]="alumnoEdit.nUsuario" 
+                          required #nUsuario="ngModel">
+                        </div>
+                        <div class="form-group">
+                          <label for="contrasenia">Contraseña</label>
+                          <input
+                          type="password" 
+                          class="form-control" 
+                          id="contraseña" 
+                          name="contrasenia"
+                          placeholder="inserta la nueva contraseña" 
+                          [(ngModel)]="alumnoEdit.contrasenia" 
+                          required #contrasenia="ngModel">
+                        </div>
+                        <button type="submit" class="btn btn-primary" [disabled]="!alumnoForm.form.valid">Submit</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="(location.reload())">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </td>
           </tr>
           <tr>

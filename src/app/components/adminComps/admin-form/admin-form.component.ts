@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Admin } from 'src/app/classes/admin';
 import { AdminService } from 'src/app/services/adminServices/admin.service';
+import { CrudOperationsService } from 'src/app/services/crud-operations.service';
 
 @Component({
   selector: 'app-admin-form',
@@ -11,15 +12,17 @@ import { AdminService } from 'src/app/services/adminServices/admin.service';
 })
 export class AdminFormComponent {
   admin: Admin;
-  
+  private adminsUrl: string;
+
   constructor(
     private route: ActivatedRoute, 
     private router: Router, 
-    private adminService: AdminService) {
+    private adminService: CrudOperationsService<Admin>) {
       this.admin = new Admin();
+      this.adminsUrl = 'http://localhost:8090/admins';
     }
     onSubmit() {
-      this.adminService.save(this.admin).subscribe(result => this.gotoadminList());
+      this.adminService.create(this.adminsUrl,this.admin).subscribe(result => this.gotoadminList());
     }
 
     gotoadminList(){

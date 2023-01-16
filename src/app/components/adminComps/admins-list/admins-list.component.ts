@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Admin } from 'src/app/classes/admin';
 import { AdminService } from 'src/app/services/adminServices/admin.service';
+import { CrudOperationsService } from 'src/app/services/crud-operations.service';
 
 
 @Component({
@@ -10,13 +12,21 @@ import { AdminService } from 'src/app/services/adminServices/admin.service';
 })
 export class AdminsListComponent {
   admins: Admin[]=[];
+  private adminsUrl: string;
 
-  constructor(private adminService: AdminService){
-
+  constructor(
+    private route: ActivatedRoute, 
+    private router: Router, 
+    private adminService: CrudOperationsService<Admin>){
+      this.adminsUrl = 'http://localhost:8090/admins';
   }
 
   ngOnInit(){
-    this.adminService.findAll().subscribe(data => {
+    this.listaAdmins();
+  }
+
+  listaAdmins() {
+    this.adminService.getAll(this.adminsUrl).subscribe(data => {
       this.admins = data;
     });
   }
