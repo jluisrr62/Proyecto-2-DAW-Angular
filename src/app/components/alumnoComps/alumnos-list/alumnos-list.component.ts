@@ -15,7 +15,8 @@ export class AlumnosListComponent {
     dni:'',
     nombre:'',
     nUsuario:'',
-    contrasenia:''
+    contrasenia:'',
+    recogidas: []
   };
 
   constructor(

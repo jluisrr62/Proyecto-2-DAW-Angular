@@ -5,4 +5,5 @@ export class Admin {
     nUsuario: string ="";
     contrasenia: string ="";
     n_colegiado: string ="";
+    depositos: string[]=[];
 }
