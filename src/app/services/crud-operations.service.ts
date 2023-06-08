@@ -11,11 +11,11 @@ export class CrudOperationsService<T> {
   }
 
   getAll(url: string): Observable<T[]> {
-    return this.http.get<T[]>(url);
+    return this.http.get<T[]>(url+"/mostrar");
   }
 
   getById(url: string, id: number): Observable<T> {
-    return this.http.get<T>(`${url}/${id}`);
+    return this.http.get<T>(`${url}?id=${id}`);
   }
 
   create(url: string, item: T): Observable<T> {

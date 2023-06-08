@@ -15,7 +15,7 @@ export class AlumnoService {
   }
 
   public findAll(): Observable<Alumno[]> {
-    return this.http.get<Alumno[]>(this.alumnosUrl);
+    return this.http.get<Alumno[]>(this.alumnosUrl+"/mostrar");
   }
 
   public save(alumno: Alumno) {

@@ -1,1 +1,35 @@
-<p>libro-form works!</p>
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #libroForm="ngForm">
+        <div class="form-group">
+          <label for="name">ISBN</label>
+          <input type="text" [(ngModel)]="libro.isbn"
+            class="form-control" 
+            id="nombre" 
+            name="nombre" 
+            placeholder="inserta el isbn"
+            required #name="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="text">Nombre</label>
+          <input type="text" [(ngModel)]="libro.nombre"
+            class="form-control" 
+            id="email" 
+            name="email" 
+            placeholder="inserta el nombre"
+            required #text="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="text">Asignatura</label>
+          <input type="text" [(ngModel)]="libro.asignatura"
+            class="form-control" 
+            id="email" 
+            name="email" 
+            placeholder="inserta la asignatura"
+            required #text="ngModel">
+          </div>      
+        <button type="submit" [disabled]="!libroForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>

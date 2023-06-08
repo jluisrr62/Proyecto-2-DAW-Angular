@@ -28,6 +28,7 @@ export class AdminsListComponent {
   listaAdmins() {
     this.adminService.getAll(this.adminsUrl).subscribe(data => {
       this.admins = data;
+      console.log(sessionStorage.getItem('rol'));
     });
   }
 }

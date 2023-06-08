@@ -13,6 +13,8 @@ import { AdminFormComponent } from './components/adminComps/admin-form/admin-for
 import { NavCompComponent } from './components/nav-comp/nav-comp.component';
 import { LibroFormComponent } from './components/libroComps/libro-form/libro-form.component';
 import { LibrosListComponent } from './components/libroComps/libros-list/libros-list.component';
+import { LoginCompComponent } from './components/login-comp/login-comp.component';
+import { RegisterCompComponent } from './components/register-comp/register-comp.component';
 
 
 
@@ -25,7 +27,9 @@ import { LibrosListComponent } from './components/libroComps/libros-list/libros-
     AdminFormComponent,
     NavCompComponent,
     LibroFormComponent,
-    LibrosListComponent
+    LibrosListComponent,
+    LoginCompComponent,
+    RegisterCompComponent
   ],
   imports: [
     BrowserModule,

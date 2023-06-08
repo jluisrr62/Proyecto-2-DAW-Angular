@@ -1,1 +1,28 @@
-<p>libros-list works!</p>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">isbn</th>
+            <th scope="col">nombre</th>
+            <th scope="col">asignatura</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let libro of libros">
+            <td>{{ libro.id }}</td>
+            <td>{{ libro.isbn }}</td>
+            <td>{{ libro.nombre }}</td>
+            <td>{{ libro.asignatura }}</td>
+          </tr>
+          <tr>
+            <td>
+                <a routerLink="/addlibro" class="btn btn-info">Add libro</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
