@@ -5,7 +5,7 @@ import { CrudOperationsService } from 'src/app/services/crud-operations.service'
 
 
 @Component({
-  selector: 'app-admins-list',
+  selector: 'app-libros-list',
   templateUrl: './libros-list.component.html',
   styleUrls: ['./libros-list.component.css']
 })

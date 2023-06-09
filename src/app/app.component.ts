@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit{
   title = 'BancoDeLibrosApp';
 
-  comprobarRol() {
-    if(sessionStorage.getItem('rol') == 'admin'){
-      return  true;
-    }else{
-      return false;
-    }
-  }
+  constructor(
+    protected authService: AuthenticationService
+    ){ }
 
   ngOnInit(): void {
-      this.comprobarRol;
+
   }
 }

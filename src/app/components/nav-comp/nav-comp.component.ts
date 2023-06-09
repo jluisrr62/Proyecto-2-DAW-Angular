@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-nav-comp',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-comp.component.css']
 })
 export class NavCompComponent {
+  constructor(
+    protected authService: AuthenticationService
+    ){ }
 
+    
 }

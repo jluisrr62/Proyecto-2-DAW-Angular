@@ -20,4 +20,20 @@ export class AuthenticationService {
   logout(): Observable<any> {
     return this.http.post(this.logoutUrl, {});
   }
+
+  comprobarRolAdmin() {
+    if(sessionStorage.getItem('rol') == 'admin'){
+      return  true;
+    }else{
+      return false;
+    }
+  }
+
+  comprobarRolUser() {
+    if(sessionStorage.getItem('rol') == 'user'){
+      return  true;
+    }else{
+      return false;
+    }
+  }
 }
