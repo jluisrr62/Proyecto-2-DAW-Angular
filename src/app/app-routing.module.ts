@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { AlumnoFormComponent } from './components/alumnoComps/alumno-form/alumno-form.component';
-import { AlumnosListComponent } from './components/alumnoComps/alumnos-list/alumnos-list.component';
-import { AdminsListComponent } from './components/adminComps/admins-list/admins-list.component';
-import { AdminFormComponent } from './components/adminComps/admin-form/admin-form.component';
-import { LibrosListComponent } from './components/libroComps/libros-list/libros-list.component';
-import { LibroFormComponent } from './components/libroComps/libro-form/libro-form.component';
-import { LoginCompComponent } from './components/login-comp/login-comp.component';
-import { RegisterCompComponent } from './components/register-comp/register-comp.component';
-import { GuardAdminsGuard } from './guards/guard-admins.guard';
+import { AlumnoFormComponent } from './Alumno/Comps/alumno-form/alumno-form.component';
+import { AlumnosListComponent } from './Alumno/Comps/alumnos-list/alumnos-list.component';
+import { AdminsListComponent } from './Admin/Comps/admins-list/admins-list.component';
+import { AdminFormComponent } from './Admin/Comps/admin-form/admin-form.component';
+import { LibrosListComponent } from './Libro/Comps/libros-list/libros-list.component';
+import { LibroFormComponent } from './Libro/Comps/libro-form/libro-form.component';
+import { LoginCompComponent } from './User/Comps/login-comp/login-comp.component';
+import { RegisterCompComponent } from './User/Comps/register-comp/register-comp.component';
+import { GuardAdminsGuard } from './Config/guards/guard-admins.guard';
 
 const routes: Routes = [
   { path:'alumnos', component: AlumnosListComponent , canActivate : [GuardAdminsGuard] },

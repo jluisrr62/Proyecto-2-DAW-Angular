@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Admin } from 'src/app/classes/admin';
-import { AdminService } from 'src/app/services/adminServices/admin.service';
-import { CrudOperationsService } from 'src/app/services/crud-operations.service';
+import { Admin } from 'src/app/Admin/admin';
+import { CrudOperationsService } from 'src/app/Config/CRUD generico/crud-operations.service';
 
 
 @Component({

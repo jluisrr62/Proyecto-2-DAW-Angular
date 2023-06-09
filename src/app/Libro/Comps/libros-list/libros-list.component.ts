@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Libro } from 'src/app/classes/libro';
-import { CrudOperationsService } from 'src/app/services/crud-operations.service';
+import { Libro } from 'src/app/Libro/libro';
+import { CrudOperationsService } from 'src/app/Config/CRUD generico/crud-operations.service';
 
 
 @Component({

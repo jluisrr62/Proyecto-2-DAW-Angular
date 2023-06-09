@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from 'src/app/classes/user';
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { User } from '../../user';
+import { AuthenticationService } from '../../Service/Authentication/authentication.service';
 
 @Component({
   selector: 'app-login-comp',

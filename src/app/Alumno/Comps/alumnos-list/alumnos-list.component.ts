@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Alumno } from 'src/app/classes/alumno';
-import { AlumnoService } from 'src/app/services/alumnoServices/alumno.service';
+import { Alumno } from 'src/app/Alumno/alumno';
+import { AlumnoService } from 'src/app/Alumno/Service/alumno.service';
 
 @Component({
   selector: 'app-alumnos-list',
