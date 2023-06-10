@@ -11,5 +11,9 @@ export class NavCompComponent {
     protected authService: AuthenticationService
     ){ }
 
-    
+    isNavbarOpen: boolean = false;
+
+    toggleNavbar() {
+      this.isNavbarOpen = !this.isNavbarOpen;
+    }
 }

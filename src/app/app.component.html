@@ -13,10 +13,10 @@
             <li class="list-inline-item" *ngIf="authService.comprobarRolAdmin()">">
               <a routerLink="/admins" class="btn btn-info">List admins</a>
             </li>
-            <app-libros-list></app-libros-list>
           </ul>
         </div>
       </div>
+      <app-libros-list></app-libros-list>
       <router-outlet></router-outlet>
     </div>
   </div>

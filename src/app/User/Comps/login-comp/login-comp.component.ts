@@ -12,12 +12,12 @@ import { AuthenticationService } from '../../Service/Authentication/authenticati
 export class LoginCompComponent implements OnInit{
   user : User;
   sessionId: any = "";
-  private headers = new HttpHeaders().set('Authorization', 'token');
+//  private headers = new HttpHeaders().set('Authorization', 'token');
   
   constructor(
     private authService: AuthenticationService,
     private router: Router,
-    private http: HttpClient) {
+/*    private http: HttpClient*/) {
     this.user = new User()
   }
 

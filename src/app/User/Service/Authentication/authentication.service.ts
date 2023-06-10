@@ -2,6 +2,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../../user';
+import { Admin } from 'src/app/Admin/admin';
+import { CrudOperationsService } from 'src/app/Config/CRUD generico/crud-operations.service';
+import { Alumno } from 'src/app/Alumno/alumno';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,16 +13,34 @@ import { User } from '../../user';
 export class AuthenticationService {
   private loginUrl = 'http://localhost:8090/users/login';
   private logoutUrl = 'http://localhost:8090/users/logout';
+  private adminsUrl = 'http://localhost:8090/admins';
+  private alumnosUrl = 'http://localhost:8090/alumnos'
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private router: Router, 
+    private crudAdmin: CrudOperationsService<Admin>,
+    private crudAlumno: CrudOperationsService<Alumno>,
+    ) {
+
+  }
+
+  registerAdmin(admin : Admin) {
+    this.crudAdmin.create(this.adminsUrl, admin).subscribe(result => 
+      this.router.navigate(['/login']));
+  }
+
+  registerAlumno(alumno : Alumno) {
+    this.crudAlumno.create(this.alumnosUrl, alumno).subscribe(result => 
+      this.router.navigate(['/login']));
   }
 
   login(user : User): Observable<any> {
     return this.http.post(this.loginUrl, user);
   }
 
-  logout(): Observable<any> {
-    return this.http.post(this.logoutUrl, {});
+  logout(){
+    sessionStorage.clear();
   }
 
   comprobarRolAdmin() {

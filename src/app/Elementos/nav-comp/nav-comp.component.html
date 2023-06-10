@@ -1,15 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
   <div class="container">
+    <a class="navbar-brand" href="#">Banco De Libros</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav" id="navbarNav">
-        <li class="nav-item ">
-          <a class="nav-link" routerLink="/addlibro" *ngIf="authService.comprobarRolAdmin()">Añadir libro</a>
+        <li class="nav-item" *ngIf="authService.comprobarRolAdmin()">
+          <a class="nav-link" routerLink="/addlibro">Añadir libro</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" *ngIf="authService.comprobarRolUser()">Recogidas</a>
+        <li class="nav-item" *ngIf="authService.comprobarRolUser()">
+          <a class="nav-link">Recogidas</a>
         </li>
         <li class="nav-item" *ngIf="authService.comprobarRolAdmin()">
           <a class="nav-link">Depositos</a>
@@ -18,10 +19,23 @@
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" onclick="sessionStorage.clear()" routerLink="/">Logout</a>
+          <a class="nav-link" onclick="authService.logout()" routerLink="/">Logout</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/register">Registrate</a>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="userMenuDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              User Menu
+            </a>
+            <div class="dropdown-menu" aria-labelledby="userMenuDropdown">
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Logout</a>
+            </div>
+          </div>
         </li>
       </ul>
     </div>

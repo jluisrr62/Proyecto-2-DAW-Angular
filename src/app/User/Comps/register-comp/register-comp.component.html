@@ -1,31 +1,41 @@
-<form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email:</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu email">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Nombre de usuario:</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu nombre de usario">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Nombre:</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu nombre">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">DNI:</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu dni">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Contraseña:</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Verifica tu contraseña:</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Verifica tu contraseña">
-      </div>
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Registrar</button>
-  </form>
+<form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="TipoUsuario">Tipo de usuario:</label>
+    <select class="form-control" id="tipoUsuario" name="tipoUsuario" [(ngModel)]="tipoUsuario" >
+      <option disabled selected>Seleccione su tipo de usuario:</option>
+      <option value ="admin">Administrador</option>
+      <option value ="alumno">Alumno</option>
+    </select>
+  </div>
+  <div class="form-group" [hidden]="!tipoUsuario">
+    <label for="dni">DNI:</label>
+    <input type="text" class="form-control" id="dni" name ="dni" placeholder="Inserte aqui su DNI" 
+    [ngModel]="comprobarTipo() ? admin.dni : alumno.dni" (ngModelChange)="comprobarTipo() ? admin.dni = $event : alumno.dni = $event">
+  </div>
+  <div class="form-group" [hidden]="!tipoUsuario">
+    <label for="n_usuario">Nombre de usuario:</label>
+    <input type="text" class="form-control" id="n_usuario" name="nUsuario" placeholder="Inserte aqui su nombre de usuario"
+    [ngModel]="comprobarTipo() ? admin.nUsuario : alumno.nUsuario" (ngModelChange)="comprobarTipo() ? admin.nUsuario = $event : alumno.nUsuario = $event">
+  </div>
+  <div class="form-group" [hidden]="!tipoUsuario">
+    <label for="password">Contraseña:</label>
+    <input type="password" class="form-control" id="password" name="contrasenia" placeholder="Inserte aqui su contraseña"
+    [ngModel]="comprobarTipo() ? admin.contrasenia : alumno.contrasenia" (ngModelChange)="comprobarTipo() ? admin.contrasenia = $event : alumno.contrasenia = $event">
+  </div>
+  <div class="form-group" [hidden]="!tipoUsuario">
+    <label for="Nombre">Nombre completo:</label>
+    <input type="text" class="form-control" id="Nombre" name="nombre" placeholder="Inserte aqui su nombre completo" 
+    [ngModel]="comprobarTipo() ? admin.nombre : alumno.nombre" (ngModelChange)="comprobarTipo() ? admin.nombre = $event : alumno.nombre = $event">
+  </div>
+
+
+  <div class="form-group" [hidden]="tipoUsuario !== 'admin'">
+    <label for="nColegiado">Número de colegiado</label>
+    <input type="text" class="form-control" id="nColegiado" name="nColegiado" placeholder="Inserte aqui su número de colegiado" [(ngModel)]="admin.nColegiado">
+  </div>
+
+
+
+
+  <button type="submit" class="btn btn-primary">Registrarse</button>
+</form>
