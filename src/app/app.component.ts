@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './User/Service/Authentication/authentication.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,8 +14,12 @@ export class AppComponent implements OnInit{
     protected authService: AuthenticationService,
     private router: Router
     ){}
-
-    ngOnInit(): void {
-      this.router.navigate(['/welcome']);
-    }
+      ngOnInit(): void {
+        if(sessionStorage.getItem('firstTime') == 'true'){
+          
+        }else{
+          this.router.navigate(['/welcome']);
+          sessionStorage.setItem('firstTime', 'true');
+        }
+      }
 }

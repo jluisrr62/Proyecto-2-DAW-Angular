@@ -22,11 +22,11 @@ export class CrudOperationsService<T> {
     return this.http.post<T>(url, item);
   }
 
-  update(url: string, id: number, item: T): Observable<T> {
-    return this.http.put<T>(`${url}/${id}`, item);
+  update(url: string, item: T): Observable<T> {
+    return this.http.put<T>(url, item);
   }
 
   delete(url: string, id: number): Observable<any> {
-    return this.http.delete(`${url}/${id}`);
+    return this.http.delete(`${url}?id=${id}`);
   }
 }

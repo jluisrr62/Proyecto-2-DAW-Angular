@@ -10,14 +10,5 @@ import { CrudOperationsService } from 'src/app/Config/CRUD generico/crud-operati
 })
 export class AdminService{
 
-  private adminsUrl: string;
-
-  constructor( private http: HttpClient) {
-    this.adminsUrl = 'http://localhost:8090/admins'
-  }
-  
-  public findAll(){
-  }
-
 }
 

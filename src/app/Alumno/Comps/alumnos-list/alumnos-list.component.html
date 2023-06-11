@@ -1,5 +1,13 @@
+<div class="container h-75">
 <div class="card my-5">
     <div class="card-body">
+      <div class="card-body">
+        <div class = "container d-flex justify-content-around mb-2">
+          <h2><u>Alumnos</u></h2>
+          <div>
+            <a routerLink="/addalumno" class="btn btn-danger colorRojoOscuro">Añadir un Alumno</a>
+          </div>
+        </div>
       <table class="table table-bordered table-striped">
         <thead class="thead-dark">
           <tr>
@@ -19,23 +27,24 @@
             <td>{{ alumno.nUsuario }}</td>
             <td>{{ alumno.contrasenia }}</td>
             <td>
-              <button class="btn btn-danger" (click)='AlumnoDelete(alumno.id)'>Borrar</button>
-              <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#exampleModal">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target] = "'#editarAlumno' + alumno.id">
                 Editar
               </button>
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
+              
+              <!-- The Modal -->
+              <div class="modal" id="editarAlumno{{alumno.id}}" tabindex="-1" aria-labelledby="editarAlumno" aria-hidden="true">
+                <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5 class="modal-title" id="exampleModalLabel">Edita el alumno</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i>
+                        </span>
                       </button>
                     </div>
                     <div class="modal-body">
                       <form (ngSubmit)="onSubmit(alumno.id)" #alumnoForm="ngForm">
-                        <!--form-->
+                        
                         <div class="form-group">
                           <label for="dni">DNI</label>
                           <input 
@@ -79,25 +88,20 @@
                           [(ngModel)]="alumnoEdit.contrasenia" 
                           required #contrasenia="ngModel">
                         </div>
-                        <button type="submit" class="btn btn-primary" [disabled]="!alumnoForm.form.valid">Submit</button>
+                        <div class = "container">
+                          <button type="submit" class="btn btn-primary" [disabled]="!alumnoForm.form.valid" onclick="location.reload()">Enviar</button>
+                        </div>
                       </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="(location.reload())">Close</button>
                     </div>
                   </div>
                 </div>
               </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a routerLink="/addalumno" class="btn btn-info">Add alumno</a>
+              <button class="btn btn-danger" (click)='AlumnoDelete(alumno.id)'>Borrar</button>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-
+</div>
 

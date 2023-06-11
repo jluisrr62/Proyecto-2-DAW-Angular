@@ -19,6 +19,16 @@ import { FooterCompComponent } from './Elementos/footer-comp/footer-comp.compone
 import { MainCompComponent } from './Elementos/main-comp/main-comp.component';
 import { Router } from '@angular/router';
 
+export function initializeApp(router: Router) {
+  return () => {
+    return new Promise<void>((resolve) => {
+      // Navigation logic to the desired component
+      router.navigate(['/welcome']).then(() => {
+        resolve();
+      });
+    });
+  };
+}
 
 @NgModule({
   declarations: [

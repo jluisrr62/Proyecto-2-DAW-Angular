@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark colorRojoOscuro" aria-label="Eighth navbar example">
   <div class="container">
-    <a class="navbar-brand" href="#">Banco De Libros</a>
+    <a class="navbar-brand" routerLink="/libros">Banco De Libros</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,6 +11,12 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/register" *ngIf="!authService.comprobarSiRol()">Registrate</a>
+        </li>
+        <li class="list-inline-item" *ngIf="authService.comprobarRolAdmin()">
+          <a routerLink="/alumnos" class="nav-link">List alumnos</a>
+        </li>
+        <li class="list-inline-item" *ngIf="authService.comprobarRolAdmin()">
+          <a routerLink="/admins" class="nav-link">List admins</a>
         </li>
         <li class="nav-item dropdown" *ngIf="authService.comprobarSiRol()">
           <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
