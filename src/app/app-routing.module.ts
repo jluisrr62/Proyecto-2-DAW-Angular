@@ -11,6 +11,7 @@ import { LibroFormComponent } from './Libro/Comps/libro-form/libro-form.componen
 import { LoginCompComponent } from './User/Comps/login-comp/login-comp.component';
 import { RegisterCompComponent } from './User/Comps/register-comp/register-comp.component';
 import { GuardAdminsGuard } from './Config/guards/guard-admins.guard';
+import { MainCompComponent } from './Elementos/main-comp/main-comp.component';
 
 const routes: Routes = [
   { path:'alumnos', component: AlumnosListComponent , canActivate : [GuardAdminsGuard] },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path:'libros', component: LibrosListComponent },
   { path:'addlibro', component: LibroFormComponent, canActivate : [GuardAdminsGuard] },
   { path:'login', component: LoginCompComponent },
-  { path:'register', component: RegisterCompComponent }
+  { path:'register', component: RegisterCompComponent },
+  { path:'welcome', component: MainCompComponent }
 ];
 
 @NgModule({

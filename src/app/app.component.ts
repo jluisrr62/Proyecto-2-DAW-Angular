@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './User/Service/Authentication/authentication.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -7,13 +9,13 @@ import { AuthenticationService } from './User/Service/Authentication/authenticat
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'BancoDeLibrosApp';
-
+  title = 'BancoDeLibrosApi'
   constructor(
-    protected authService: AuthenticationService
-    ){ }
+    protected authService: AuthenticationService,
+    private router: Router
+    ){}
 
-  ngOnInit(): void {
-
-  }
+    ngOnInit(): void {
+      this.router.navigate(['/welcome']);
+    }
 }

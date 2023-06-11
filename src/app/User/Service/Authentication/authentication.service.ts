@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 })
 export class AuthenticationService {
   private loginUrl = 'http://localhost:8090/users/login';
-  private logoutUrl = 'http://localhost:8090/users/logout';
   private adminsUrl = 'http://localhost:8090/admins';
   private alumnosUrl = 'http://localhost:8090/alumnos'
 
@@ -23,6 +22,10 @@ export class AuthenticationService {
     private crudAlumno: CrudOperationsService<Alumno>,
     ) {
 
+  }
+
+  getUserName(){
+    return sessionStorage.getItem('username');
   }
 
   registerAdmin(admin : Admin) {
@@ -40,6 +43,7 @@ export class AuthenticationService {
   }
 
   logout(){
+    this.router.navigate(['/welcome']);
     sessionStorage.clear();
   }
 
@@ -53,6 +57,14 @@ export class AuthenticationService {
 
   comprobarRolUser() {
     if(sessionStorage.getItem('rol') == 'user'){
+      return  true;
+    }else{
+      return false;
+    }
+  }
+
+  comprobarSiRol() {
+    if(sessionStorage.getItem('rol') == 'admin' || sessionStorage.getItem('rol') == 'user'){
       return  true;
     }else{
       return false;

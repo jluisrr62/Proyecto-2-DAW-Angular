@@ -8,9 +8,8 @@ import { AuthenticationService } from 'src/app/User/Service/Authentication/authe
 })
 export class NavCompComponent {
   constructor(
-    protected authService: AuthenticationService
+    public authService: AuthenticationService
     ){ }
-
     isNavbarOpen: boolean = false;
 
     toggleNavbar() {

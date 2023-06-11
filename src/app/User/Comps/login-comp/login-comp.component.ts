@@ -34,7 +34,7 @@ export class LoginCompComponent implements OnInit{
           this.sessionId = response.sessionId;
           
           sessionStorage.setItem(
-            'token',
+            'username',
             this.sessionId
           );
 
@@ -42,7 +42,7 @@ export class LoginCompComponent implements OnInit{
             'rol',
             response.rol
           )
-          this.router.navigate(['/']);
+          this.router.navigate(['/libros']);
         },
         error => {
           // Login failed, handle error or display error message
