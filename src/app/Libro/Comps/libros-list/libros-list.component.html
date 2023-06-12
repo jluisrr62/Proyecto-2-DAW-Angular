@@ -1,24 +1,73 @@
 <div class="container h-75">
   <div class="card my-5">
-      <div class="card-body">
-        <table class="table table-bordered table-striped">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">id</th>
-              <th scope="col">isbn</th>
-              <th scope="col">nombre</th>
-              <th scope="col">asignatura</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let libro of libros">
-              <td>{{ libro.id }}</td>
-              <td>{{ libro.isbn }}</td>
-              <td>{{ libro.nombre }}</td>
-              <td>{{ libro.asignatura }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">isbn</th>
+            <th scope="col">nombre</th>
+            <th scope="col">asignatura</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let libro of libros">
+            <td>{{ libro.id }}</td>
+            <td>{{ libro.isbn }}</td>
+            <td>{{ libro.nombre }}</td>
+            <td>{{ libro.asignatura }}</td>
+            <td>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                [attr.data-bs-target]="'#editarLibro' + libro.id">
+                Editar
+              </button>
+              <div class="modal" id="editarLibro{{libro.id}}" tabindex="-1" aria-labelledby="editarLibro"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Edita el libro</h5>
+                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form (ngSubmit)="onSubmit(libroEdit.id)" #libroForm="ngForm">
+
+                        <div class="form-group">
+                          <label for="isbn">ISBN</label>
+                          <input type="text" class="form-control" name="isbn" id="isbn"
+                            placeholder="inserta el ISBN nuevo" [(ngModel)]="libroEdit.isbn" required #dni="ngModel">
+                        </div>
+                        <div class="form-group">
+                          <label for="nombre">Titulo</label>
+                          <input type="text" class="form-control" id="nombre" name="nombre"
+                            placeholder="inserta el titulo nuevo" [(ngModel)]="libroEdit.nombre" required
+                            #nombre="ngModel">
+                        </div>
+                        <div class="form-group">
+                          <label for="asignatura">Asignatura</label>
+                          <select class="form-control" id="asignatura" name="asignatura"
+                            [(ngModel)]="libroEdit.asignatura" required
+                            #nUsuario="ngModel">
+                            <option *ngFor="let asignatura of getNombresAsignaturas()" [value] = "asignatura"> {{asignatura}} </option>
+                          </select>
+                        </div>
+                        <div class="container">
+                          <button type="submit" class="btn btn-primary" [disabled]="!libroForm.form.valid"
+                            onclick="location.reload()">Enviar</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-danger" (click)='libroDelete(libro.id)'>Borrar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
 </div>

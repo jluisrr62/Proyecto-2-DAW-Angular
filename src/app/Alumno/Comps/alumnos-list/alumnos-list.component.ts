@@ -38,7 +38,7 @@ export class AlumnosListComponent {
      this.listaAlumnos();
   }
 
-  AlumnoDelete(alumnoId: number){
+  alumnoDelete(alumnoId: number){
     this.alumnoService.delete(this.alumnosUrl,alumnoId).subscribe(data => {
       console.log("alumno "+alumnoId+" borrado");
       this.listaAlumnos();

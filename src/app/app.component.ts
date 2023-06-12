@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
     ){}
       ngOnInit(): void {
         if(sessionStorage.getItem('firstTime') == 'true'){
-          
+          this.router.navigate(['/libros'])
         }else{
           this.router.navigate(['/welcome']);
           sessionStorage.setItem('firstTime', 'true');
