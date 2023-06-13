@@ -25,7 +25,7 @@ export class AuthenticationService {
   }
 
   getUserName(){
-    return sessionStorage.getItem('username');
+    return sessionStorage.getItem('username') || '';
   }
 
   registerAdmin(admin : Admin) {
@@ -56,7 +56,7 @@ export class AuthenticationService {
   }
 
   comprobarRolUser() {
-    if(sessionStorage.getItem('rol') == 'user'){
+    if(sessionStorage.getItem('rol') == 'alumno'){
       return  true;
     }else{
       return false;
@@ -64,7 +64,7 @@ export class AuthenticationService {
   }
 
   comprobarSiRol() {
-    if(sessionStorage.getItem('rol') == 'admin' || sessionStorage.getItem('rol') == 'user'){
+    if(sessionStorage.getItem('rol') == 'admin' || sessionStorage.getItem('rol') == 'alumno'){
       return  true;
     }else{
       return false;

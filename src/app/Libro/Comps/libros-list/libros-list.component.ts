@@ -3,6 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Libro } from 'src/app/Libro/libro';
 import { CrudOperationsService } from 'src/app/Config/CRUD generico/crud-operations.service';
 import { Asignatura } from '../../Asignatura/asignatura';
+import { AuthenticationService } from 'src/app/User/Service/Authentication/authentication.service';
+import { Recogida } from '../../Recogida/recogida';
+import { RecogidaCreate } from '../../Recogida/recogida-create';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -23,16 +27,26 @@ export class LibrosListComponent {
     fechasRecogidas: []
   };
 
+  recogidaCreate: RecogidaCreate = {
+    nombreUsuario : '',
+    idLibro :  0
+  }
+
   private librosUrl: string;
   private asignaturasUrl: string;
+  private recogidasUrl: string;
 
   constructor(
     private route: ActivatedRoute, 
     private router: Router, 
+    public authService: AuthenticationService,
+    private http: HttpClient,
     private libroService: CrudOperationsService<Libro>,
-    private asignaturaService: CrudOperationsService<Asignatura>){
+    private asignaturaService: CrudOperationsService<Asignatura>,
+    private recogidaService: CrudOperationsService<Recogida>){
       this.librosUrl = 'http://localhost:8090/libros';
       this.asignaturasUrl = 'http://localhost:8090/asignaturas';
+      this.recogidasUrl = 'http://localhost:8090/recogidas';
   }
 
   onSubmit(libroId:number) {
@@ -78,4 +92,13 @@ export class LibrosListComponent {
 
     return this.nombresAsignaturas;
   }
+
+  createRecogida(nombreUsuario: String , idLibro : number){
+    this.recogidaCreate.idLibro = idLibro;
+    this.recogidaCreate.nombreUsuario = nombreUsuario;
+
+    return this.http.post<RecogidaCreate>(this.recogidasUrl, this.recogidaCreate).subscribe( result => console.log(result));
+  }
+
+
 }
