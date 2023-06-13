@@ -27,10 +27,13 @@
               <a class="nav-link" routerLink="/addlibro">Añadir libro</a>
             </li>
             <li class="nav-item" *ngIf="authService.comprobarRolUser()">
-              <a class="nav-link">Recogidas</a>
+              <a class="nav-link" routerLink="/recogidas">Recogidas</a>
             </li>
             <li class="nav-item" *ngIf="authService.comprobarRolAdmin()">
-              <a class="nav-link">Depositos</a>
+              <a class="nav-link" routerLink="/recogidas">Todas las recogidas</a>
+            </li>
+            <li class="nav-item" *ngIf="authService.comprobarRolAdmin()">
+              <a class="nav-link" routerLink="/depositos">Depositos</a>
             </li>
             <li class="dropdown-divider bg-light"></li> 
             <li class="nav-item">

@@ -42,8 +42,7 @@ export class LibrosListComponent {
     public authService: AuthenticationService,
     private http: HttpClient,
     private libroService: CrudOperationsService<Libro>,
-    private asignaturaService: CrudOperationsService<Asignatura>,
-    private recogidaService: CrudOperationsService<Recogida>){
+    private asignaturaService: CrudOperationsService<Asignatura>){
       this.librosUrl = 'http://localhost:8090/libros';
       this.asignaturasUrl = 'http://localhost:8090/asignaturas';
       this.recogidasUrl = 'http://localhost:8090/recogidas';

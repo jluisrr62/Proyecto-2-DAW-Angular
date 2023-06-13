@@ -4,5 +4,4 @@ export class Alumno {
     nombre: string ="";
     nUsuario: string ="";
     contrasenia: string ="";
-    recogidas: Date[] =[];
 }

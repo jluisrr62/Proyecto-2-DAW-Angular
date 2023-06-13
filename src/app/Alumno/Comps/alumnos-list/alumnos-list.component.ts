@@ -16,8 +16,7 @@ export class AlumnosListComponent {
     dni:'',
     nombre:'',
     nUsuario:'',
-    contrasenia:'',
-    recogidas: []
+    contrasenia:''
   };
   private alumnosUrl: string;
 

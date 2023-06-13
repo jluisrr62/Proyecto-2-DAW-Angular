@@ -1,0 +1,25 @@
+<div class="container h-75">
+	<div class="card my-5">
+		<div class="card-body">
+			<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">isbn</th>
+						<th scope="col">fecha</th>
+						<th scope="col" *ngIf="authService.comprobarRolAdmin()">dni</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let recogida of recogidas">
+						<td>{{ recogida.isbn}}</td>
+						<td>{{ recogida.fecha }}</td>
+                        <td *ngIf="authService.comprobarRolAdmin()">{{ recogida.dni }}</td>
+						<td>
+							<button class="btn btn-danger" (click)='recogidaDelete(recogida.dni, recogida.isbn, recogida.fecha)'>Borrar</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
