@@ -68,6 +68,9 @@
 						<td *ngIf="authService.comprobarRolUser()">
 							<button class="btn btn-danger" (click)='createRecogida(authService.getUserName(), libro.id)'>Añadir recogida</button>
 						</td>
+						<td *ngIf="authService.comprobarRolAdmin()">
+							<button class="btn btn-danger" (click)='createDeposito(authService.getUserName(), libro.id)'>Añadir deposito</button>
+						</td>
 					</tr>
 				</tbody>
 			</table>

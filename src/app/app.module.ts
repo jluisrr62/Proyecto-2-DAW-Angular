@@ -19,6 +19,7 @@ import { FooterCompComponent } from './Elementos/footer-comp/footer-comp.compone
 import { MainCompComponent } from './Elementos/main-comp/main-comp.component';
 import { Router } from '@angular/router';
 import { RecogidaListComponent } from './Libro/Recogida/Comps/recogida-list/recogida-list.component';
+import { DepositoListComponent } from './Deposito/Comps/deposito-list/deposito-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RecogidaListComponent } from './Libro/Recogida/Comps/recogida-list/reco
     RegisterCompComponent,
     FooterCompComponent,
     MainCompComponent,
-    RecogidaListComponent
+    RecogidaListComponent,
+    DepositoListComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ import { RegisterCompComponent } from './User/Comps/register-comp/register-comp.
 import { GuardAdminsGuard } from './Config/guards/guard-admins.guard';
 import { MainCompComponent } from './Elementos/main-comp/main-comp.component';
 import { RecogidaListComponent } from './Libro/Recogida/Comps/recogida-list/recogida-list.component';
+import { DepositoListComponent } from './Deposito/Comps/deposito-list/deposito-list.component';
 
 const routes: Routes = [
   { path:'alumnos', component: AlumnosListComponent , canActivate : [GuardAdminsGuard] },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path:'login', component: LoginCompComponent },
   { path:'register', component: RegisterCompComponent },
   { path:'welcome', component: MainCompComponent },
-  { path:'recogidas', component: RecogidaListComponent }
+  { path:'recogidas', component: RecogidaListComponent },
+  { path:'depositos', component: DepositoListComponent }
 ];
 
 @NgModule({

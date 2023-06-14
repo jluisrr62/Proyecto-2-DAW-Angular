@@ -4,9 +4,9 @@ import { Libro } from 'src/app/Libro/libro';
 import { CrudOperationsService } from 'src/app/Config/CRUD generico/crud-operations.service';
 import { Asignatura } from '../../Asignatura/asignatura';
 import { AuthenticationService } from 'src/app/User/Service/Authentication/authentication.service';
-import { Recogida } from '../../Recogida/recogida';
 import { RecogidaCreate } from '../../Recogida/recogida-create';
 import { HttpClient } from '@angular/common/http';
+import { DepositoCreate } from 'src/app/Deposito/deposito-create';
 
 
 @Component({
@@ -27,6 +27,11 @@ export class LibrosListComponent {
     fechasRecogidas: []
   };
 
+  depositoCreate: DepositoCreate = {
+    nombreUsuario : '',
+    idLibro :  0
+  }
+
   recogidaCreate: RecogidaCreate = {
     nombreUsuario : '',
     idLibro :  0
@@ -35,6 +40,7 @@ export class LibrosListComponent {
   private librosUrl: string;
   private asignaturasUrl: string;
   private recogidasUrl: string;
+  private depositosUrl: string;
 
   constructor(
     private route: ActivatedRoute, 
@@ -46,6 +52,7 @@ export class LibrosListComponent {
       this.librosUrl = 'http://localhost:8090/libros';
       this.asignaturasUrl = 'http://localhost:8090/asignaturas';
       this.recogidasUrl = 'http://localhost:8090/recogidas';
+      this.depositosUrl = 'http://localhost:8090/depositos';
   }
 
   onSubmit(libroId:number) {
@@ -100,4 +107,10 @@ export class LibrosListComponent {
   }
 
 
+  createDeposito(nombreUsuario: String , idLibro : number){
+    this.depositoCreate.idLibro = idLibro;
+    this.depositoCreate.nombreUsuario = nombreUsuario;
+
+    return this.http.post<RecogidaCreate>(this.depositosUrl, this.depositoCreate).subscribe( result => console.log(result));
+  }
 }

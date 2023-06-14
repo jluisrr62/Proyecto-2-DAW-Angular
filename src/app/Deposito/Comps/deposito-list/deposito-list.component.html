@@ -1,0 +1,23 @@
+<div class="container h-75">
+	<div class="card my-5">
+		<div class="card-body">
+			<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">isbn</th>
+						<th scope="col">fecha</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let deposito of depositos">
+						<td>{{ deposito.isbn}}</td>
+						<td>{{ deposito.fecha }}</td>
+						<td>
+							<button class="btn btn-danger" (click)='depositoDelete(deposito.nColegiado, deposito.isbn, deposito.fecha)'>Borrar</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
