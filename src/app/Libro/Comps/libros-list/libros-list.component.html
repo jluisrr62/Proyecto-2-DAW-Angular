@@ -33,7 +33,7 @@
 											</button>
 										</div>
 										<div class="modal-body">
-											<form (ngSubmit)="onSubmit(libroEdit.id)" #libroForm="ngForm">
+											<form (ngSubmit)="onSubmit(libro.id)" #libroForm="ngForm">
 
 												<div class="form-group">
 													<label for="isbn">ISBN</label>
@@ -48,8 +48,9 @@
 												</div>
 												<div class="form-group">
 													<label for="asignatura">Asignatura</label>
-													<select class="form-control" id="asignatura" name="asignatura"
+													<select class="form-select" id="asignatura" name="asignatura"
 														[(ngModel)]="libroEdit.asignatura" required #nUsuario="ngModel">
+														<option selected disabled>Selecciona aqui la asignatura</option>
 														<option *ngFor="let asignatura of getNombresAsignaturas()" [value]="asignatura">
 															{{asignatura}} </option>
 													</select>

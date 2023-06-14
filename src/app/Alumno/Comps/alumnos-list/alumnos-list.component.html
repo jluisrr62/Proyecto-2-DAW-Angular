@@ -15,8 +15,6 @@
             <th scope="col">dni</th>
             <th scope="col">nombre</th>
             <th scope="col">usuario</th>
-            <th scope="col">contraseña</th>
-            <th scope="col">borrar y editar</th>
           </tr>
         </thead>
         <tbody>
@@ -25,13 +23,12 @@
             <td>{{ alumno.dni }}</td>
             <td>{{ alumno.nombre }}</td>
             <td>{{ alumno.nUsuario }}</td>
-            <td>{{ alumno.contrasenia }}</td>
+            <!-- 
             <td>
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target] = "'#editarAlumno' + alumno.id">
                 Editar
               </button>
               
-              <!-- The Modal -->
               <div class="modal" id="editarAlumno{{alumno.id}}" tabindex="-1" aria-labelledby="editarAlumno" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -98,6 +95,7 @@
               </div>
               <button class="btn btn-danger" (click)='alumnoDelete(alumno.id)'>Borrar</button>
             </td>
+            -->
           </tr>
         </tbody>
       </table>

@@ -1,7 +1,8 @@
-<form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+<div class="container h-75 m-3">
+<form #registerForm="ngForm" (ngSubmit)="onSubmit()" class="m-3">
   <div class="form-group">
     <label for="TipoUsuario">Tipo de usuario:</label>
-    <select class="form-control" id="tipoUsuario" name="tipoUsuario" [(ngModel)]="tipoUsuario" >
+    <select class="form-select" id="tipoUsuario" name="tipoUsuario" [(ngModel)]="tipoUsuario" >
       <option disabled selected>Seleccione su tipo de usuario:</option>
       <option value ="admin">Administrador</option>
       <option value ="alumno">Alumno</option>
@@ -37,5 +38,6 @@
 
 
 
-  <button type="submit" class="btn btn-primary">Registrarse</button>
+  <button type="submit" class="btn btn-primary my-3">Registrarse</button>
 </form>
+</div>
